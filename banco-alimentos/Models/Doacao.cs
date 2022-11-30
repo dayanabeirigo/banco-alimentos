@@ -16,10 +16,7 @@ namespace banco_alimentos.Models
         [Required(ErrorMessage = "Obrigatório informar o beneficiário!")]
         public int BeneficiarioId { get; set; }
         [ForeignKey("BeneficiarioId")]
-
-
         [Display(Name = "CPF do Beneficiário")]
-        [Required(ErrorMessage = "Obrigatório informar o beneficiário!")]
         public Beneficiario Beneficiario { get; set; }
 
         [Display(Name = "Tipo de Cesta")]

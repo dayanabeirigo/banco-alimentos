@@ -43,6 +43,25 @@ namespace banco_alimentos.Controllers
             return View(beneficiario);
         }
 
+        // GET: Beneficiarios/Details/5
+        public async Task<IActionResult> Relatorio(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var beneficiario = await _context.Beneficiarios
+                .Include(t=> t.Doacoes)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (beneficiario == null)
+            {
+                return NotFound();
+            }
+
+            return View(beneficiario);
+        }
+
         // GET: Beneficiarios/Create
         public IActionResult Create()
         {
