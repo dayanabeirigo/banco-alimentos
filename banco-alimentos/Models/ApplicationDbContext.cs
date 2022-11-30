@@ -14,6 +14,7 @@ namespace app_web_backend.Models
         }
 
         public DbSet<Beneficiario> Beneficiarios { get; set; }
+        public DbSet<Doacao> Doacoes { get; set; }
 
     }
 }

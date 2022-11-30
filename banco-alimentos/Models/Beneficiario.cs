@@ -18,5 +18,7 @@ namespace banco_alimentos.Models
 
         [Required(ErrorMessage = "Obrigatório Informar o nome!")]
         public string Nome { get; set; }
+
+        public ICollection<Doacao> Doacoes { get; set; }
     }
 }
